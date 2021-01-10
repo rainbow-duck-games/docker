@@ -1,0 +1,1 @@
+Dockerized Unity Editor with a lot of stuff removed in order to be as small as possible.
