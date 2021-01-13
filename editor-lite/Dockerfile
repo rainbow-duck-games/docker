@@ -1,5 +1,6 @@
 ARG baseImage=unityci/base:latest
-ARG editorImage=unityci/editor:2020.2.1f1-base-0
+#ARG editorImage=unityci/editor:2020.2.1f1-base-0
+ARG editorImage=unityci/editor:2019.2.11f1-base-0
 
 FROM $editorImage as builder
 
@@ -27,6 +28,7 @@ RUN echo 'Cleaning image' \
           ! -name 'D3Dcompiler_47.dll' \
           ! -name 'UnityShaderCompiler' \
           ! -name 'RoslynScripts' \
+          ! -name 'Roslyn' \
           ! -name 'glslang.so' \
           ! -name 'libCST.so' \
           ! -name 'libCausticGLUT.so' \
