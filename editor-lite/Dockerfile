@@ -21,25 +21,7 @@ RUN echo 'Cleaning image' \
 # We are not planning to debug in CI
     && rm -rf /opt/unity/Editor/Unity_s.debug \
 # Remove playback engines
-    && rm -rf /opt/unity/Editor/Data/PlaybackEngines/ \
-# Remove all Tools except required
-    && find /opt/unity/Editor/Data/Tools/* \
-          ! -path . \
-          ! -name 'D3Dcompiler_47.dll' \
-          ! -name 'UnityShaderCompiler' \
-          ! -name 'RoslynScripts' \
-          ! -name 'Roslyn' \
-          ! -name 'glslang.so' \
-          ! -name 'libCST.so' \
-          ! -name 'libCausticGLUT.so' \
-          ! -name 'libOpenCL.so' \
-          ! -name 'libOpenImageDenoise.so.0' \
-          ! -name 'libembree.so.2' \
-          ! -name 'libfreeimage.so.3' \
-          ! -name 'libtbb.so.2' \
-          ! -name 'libtbbmalloc.so.2' \
-          -maxdepth 0 \
-          -exec rm -rf {} +
+    && rm -rf /opt/unity/Editor/Data/PlaybackEngines/
 
 ###########################
 #          Editor         #
